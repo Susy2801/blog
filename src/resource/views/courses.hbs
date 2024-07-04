@@ -1,0 +1,57 @@
+<div class="mt-4">
+  {{! <form method="POST" action="/courses/update">
+    <input type="text" name="name" />
+    <input type="text" name="des" />
+    <button type="submit">Thêm khóa học</button>
+
+  </form> }}
+  <form method="POST" action="/courses/update">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tiêu đề</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Nội dung</label>
+      <input
+        type="text"
+        name="des"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Link ảnh</label>
+      <input
+        type="text"
+        name="thumb"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Thêm khóa học</button>
+  </form>
+
+  <div class="row">
+    {{#each courses}}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card">
+          <img src="{{this.thumb}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.des}}</p>
+            <a href="#" class="btn btn-primary">GO</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
